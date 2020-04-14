@@ -1,7 +1,7 @@
 module Debounce(
     input clk, 
-    input button,
-    output reg output 
+    input button//,
+   // output reg output Just commented out for testing purposes
 );
 
 reg previous_state;
