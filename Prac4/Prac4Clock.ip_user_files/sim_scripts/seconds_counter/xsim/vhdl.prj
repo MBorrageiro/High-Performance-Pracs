@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../Prac4Clock.srcs/sources_1/ip/seconds_counter/sim/seconds_counter.vhd" \
+
+nosort
