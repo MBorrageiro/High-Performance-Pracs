@@ -31,7 +31,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet {{d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.xci}}
+read_ip -quiet {{D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.xci}}
 set_property used_in_implementation false [get_files -all {{d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -87,32 +87,32 @@ write_checkpoint -force -noxdef seconds_counter.dcp
 create_report "seconds_counter_synth_1_synth_report_utilization_0" "report_utilization -file seconds_counter_utilization_synth.rpt -pb seconds_counter_utilization_synth.pb"
 
 if { [catch {
-  file copy -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter.dcp} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.dcp}
+  file copy -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter.dcp} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.dcp}
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}
+  write_verilog -force -mode synth_stub {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}
+  write_vhdl -force -mode synth_stub {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.v}
+  write_verilog -force -mode funcsim {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.v}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.vhdl}
+  write_vhdl -force -mode funcsim {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.vhdl}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -122,32 +122,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter.dcp} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.dcp}
+  file copy -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter.dcp} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter.dcp}
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_stub.v} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}
+  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_stub.v} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_stub.vhdl} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}
+  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_stub.vhdl} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_sim_netlist.v} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.v}
+  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_sim_netlist.v} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.v}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_sim_netlist.vhdl} {d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.vhdl}
+  file rename -force {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.runs/seconds_counter_synth_1/seconds_counter_sim_netlist.vhdl} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_sim_netlist.vhdl}
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -156,13 +156,13 @@ if { [catch {
 
 if {[file isdir {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}]} {
   catch { 
-    file copy -force {{d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}
+    file copy -force {{D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}
   }
 }
 
 if {[file isdir {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}]} {
   catch { 
-    file copy -force {{d:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}
+    file copy -force {{D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.vhdl}} {D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.ip_user_files/ip/seconds_counter}
   }
 }
 file delete __synthesis_is_running__

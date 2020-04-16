@@ -1,9 +1,9 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed Apr 15 11:54:19 2020
+// Date        : Thu Apr 16 13:20:18 2020
 // Host        : DESKTOP-Q0QCV0H running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {d:/UCT Work/EEE/High Perfomance
+// Command     : write_verilog -force -mode synth_stub {D:/UCT Work/EEE/High Perfomance
 //               Embedded/FPGA/Prac4/Prac4Clock.srcs/sources_1/ip/seconds_counter/seconds_counter_stub.v}
 // Design      : seconds_counter
 // Purpose     : Stub declaration of top-level module interface

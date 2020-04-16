@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Apr 16 12:21:20 2020
+# Process ID: 9084
+# Current directory: D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.sim/sim_tb/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.sim/sim_tb/behav/xsim/xsim.dir/Clock_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.sim/sim_tb/behav/xsim/webtalk.log
+# Journal file: D:/UCT Work/EEE/High Perfomance Embedded/FPGA/Prac4/Prac4Clock.sim/sim_tb/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/UCT -notrace
