@@ -1,8 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../Clock.v" \
 "../../../../Prac4Clock.srcs/sources_1/new/clock_divider.v" \
-"../../../../Prac4Clock.srcs/sim_tb/new/Clock_tb.v" \
+"../../../../Prac4Clock.srcs/sim_tb/new/clkDivTestbench.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

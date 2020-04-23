@@ -1,11 +1,9 @@
 `timescale 1ns / 1ps
 
-
-
 module WallClock(
 	//inputs - these will depend on your board's constraint files
 	input CLK100MHZ, //Input clock of 100MHz
-	//input [1:0] sw,  //Input switches - not sure if useful
+	//input [3:0] sw,  //Input switches - For PWM
 	//input [2:0] btn, //Input Buttons: IncMin, IncHour, Reset.
 	
 	//outputs - these will depend on your board's constraint files
@@ -34,16 +32,25 @@ module WallClock(
 	reg [3:0]r_mins2 = 4'd0;
 	
 	//Seconds registers
+	wire w_divided_clk;
 	reg r_secReset = 1'b0;     //Reset value holder
 	reg [5:0] r_seconds = 6'd0;      //Record the seconds
 	reg r_minIncF = 1'b0;      //Flag to increase min
-	reg r_hourIncF = 1'b0;     //Flag to increase hour
+	reg r_hourIncF = 1'b0;     //Flag to increase 
+	
+	reg currentClk = 0;
+	reg prevClk = 0;
     
-    seconds_counter timeSeconds (
+   /* seconds_counter timeSeconds (
        .CLK(CLK100MHZ),        // input wire CLK
        .SCLR(r_secReset),      // input wire SCLR
        .Q(w_secondsCounter)    // output wire [25 : 0] Q
-    );
+    );*/
+    clock_divider secondsClk(
+	   .clk(CLK100MHZ),
+	   .divided_clk(w_divided_clk)
+	);
+    
 	//Initialize seven segment
 	// You will need to change some signals depending on you constraints
 /*	SS_Driver SS_Driver1(
@@ -54,12 +61,16 @@ module WallClock(
 	
 	//The main logic
 	always @(posedge CLK100MHZ) begin
+	   ///// Seconds incrementer logic
+	   prevClk <= currentClk;
+	   currentClk <= w_divided_clk;
 	   ///// Clear seconds counter to start counting again
 	    if(r_secReset)begin
 	       r_secReset <= 1'b0;
 	     end
 	    ///// Seconds increment logic /////
-		else if(w_secondsCounter >= 26'h4)begin
+	    else if(currentClk == ~prevClk)begin
+		//else if(w_secondsCounter >= 26'h4)begin
 		      if(r_seconds == 6'd59)begin
 		          r_seconds <= 6'd0;
 		          r_minIncF <= 1'b1;

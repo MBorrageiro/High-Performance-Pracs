@@ -10,7 +10,7 @@ wire [3:0] hour10;
 
 
 always begin
-    #1 clk = ~clk;
+    #5 clk = ~clk;
     end
 
 WallClock uut(clk,LED,minUn,min10,hourUn,hour10);

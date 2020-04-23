@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="seconds_counter_synth_1" LaunchPart="xc7a100tcsg324-2" LaunchTime="1587035957">
   <File Type="PA-TCL" Name="seconds_counter.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="seconds_counter_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="seconds_counter_reports.tcl"/>
   <File Type="RDS-RDS" Name="seconds_counter.vds"/>
   <File Type="RDS-UTIL" Name="seconds_counter_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="seconds_counter_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="seconds_counter.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="seconds_counter_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="seconds_counter_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/seconds_counter">
     <File Path="$PSRCDIR/sources_1/ip/seconds_counter/seconds_counter.xci">
       <FileInfo>
