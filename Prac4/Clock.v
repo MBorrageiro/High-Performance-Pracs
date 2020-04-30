@@ -3,7 +3,7 @@
 module WallClock(
 	//inputs - these will depend on your board's constraint files
 	input CLK100MHZ, //Input clock of 100MHz
-	//input [3:0] sw,  //Input switches - For PWM
+	input [3:0] sw,  //Input switches - For PWM
 	//input [2:0] btn, //Input Buttons: IncMin, IncHour, Reset.
 	
 	//outputs - these will depend on your board's constraint files
