@@ -78,8 +78,9 @@ module top(
 		    PWM <=douta;
 end
     
-    reg [8:0]f_base = 746;
-    reg [107:0] song = 107'hF10CD0E101CDCF101CDC1A0ACDC;
+    reg [9:0]f_base = 9'd261; // for clocks = 311
+    reg [107:0] song = 107'hF10CD0E101CDCF101CDC1A0ACDC; //Rick Roll
+    reg [127:0] clocks = 127'h13513515161461461614614627267267;
     
 always @(posedge CLK100MHZ) begin   
     //PWM <= douta; // tie memory output to the PWM input
@@ -110,47 +111,104 @@ always @(posedge CLK100MHZ) begin
             end
         end
         4'hD: begin //1.5 times faster
-            if (clkdiv >= f_base*293/260) begin
+            if (clkdiv >= f_base*13/7) begin //293/260
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
         4'hE: begin //2 times faster
-            if (clkdiv >= f_base*5/4) begin
+            if (clkdiv >= f_base*12/7) begin
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
         4'hF: begin // base note
-            if (clkdiv >= f_base*349/260) begin
+            if (clkdiv >= f_base*11/7) begin //349/260
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
         4'h1: begin // 1.25 faster one is G
-            if (clkdiv >= f_base*3/2) begin
+            if (clkdiv >= f_base*10/7) begin //3/2
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
         4'hA: begin //1.5 times faster
-            if (clkdiv >= f_base*440/260) begin
+            if (clkdiv >= f_base*9/7) begin //440/260
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
         4'hB: begin //2 times faster
-            if (clkdiv >= f_base*493/260) begin
+            if (clkdiv >= f_base*8/7) begin //493/260
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
-        4'hC: begin //2 times faster
+        4'h2: begin //2 times faster
             if (clkdiv >= f_base) begin
                 clkdiv[12:0] <= 0;
                 addra <= addra +1;
             end
         end
+        ////////////////////
+        //Clocks
+//        case(note)
+//        4'h0: begin // PAUSE
+//            if (clkdiv >= f_base*2) begin
+//                clkdiv[12:0] <= 0;
+//                  addra <= addra +1;
+//            end
+//        end
+//        4'h1: begin // 1.25 faster
+//            if (clkdiv >= f_base*7/6) begin
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h2: begin //1.5 times faster
+//            if (clkdiv >= f_base*4/3) begin //293/260
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h3: begin //2 times faster
+//            if (clkdiv >= f_base*17/12) begin
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h4: begin // base note
+//            if (clkdiv >= f_base*19/12) begin //349/260
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h5: begin // 1.25 faster one is G
+//            if (clkdiv >= f_base*7/4) begin //3/2
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h6: begin //1.5 times faster
+//            if (clkdiv >= f_base*11/6) begin //440/260
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h7: begin //2 times faster
+//            if (clkdiv >= f_base) begin //493/260
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
+//        4'h8: begin //2 times faster
+//            if (clkdiv >= f_base) begin
+//                clkdiv[12:0] <= 0;
+//                addra <= addra +1;
+//            end
+//        end
         default: begin // Don't know what's happening, just output middle C
             if (clkdiv >= 1493) begin
                 clkdiv[12:0] <= 0;
